@@ -1,26 +1,26 @@
 import java.util.*;
 
-class nimm {
+class Main {
 
 
   static Scanner scanner = new Scanner(System.in);
   
 	public static void main(String[] args) {
-  spielStarten();      
-  System.out.println("Nochmal? (ja/nein)");
-  String antwort = scanner.next();
+    spielStarten();      
+    System.out.println("Nochmal? (ja/nein)");
+    String antwort = scanner.next();
 
 
-  if(antwort == "ja"){
-    spielStarten();
-  }
-  else if(antwort == "nein")
-  {
-    return;
-  }
-  else{
-    System.out.println("Bitte gebe ja oder nein ein!")
-  }
+    if(antwort.equalsIgnoreCase("ja")){
+      spielStarten();
+    }
+    else if(antwort.equalsIgnoreCase("nein"))
+    {
+      return;
+    }
+    else{
+      System.out.println("Bitte gebe ja oder nein ein!");
+    }
   }
 
   static void spielStarten()
@@ -54,7 +54,7 @@ class nimm {
         aktuelleAnzahl = aktuelleAnzahl - genommen;
         System.out.println("Neue Streichhölzer Anzahl: " + aktuelleAnzahl);
 
-        if(aktuelleAnzahl == 0)
+        if(aktuelleAnzahl <= 0)
         {
           System.out.println("Spieler 1 gewinnt!!!");
           return;
@@ -73,7 +73,7 @@ class nimm {
       aktuelleAnzahl = aktuelleAnzahl - genommen;
       System.out.println("Neue Streichhölzer Anzahl: " + aktuelleAnzahl);
 
-      if(aktuelleAnzahl == 0)
+      if(aktuelleAnzahl <= 0)
         {
           System.out.println("Spieler 2 gewinnt!!!");
           return;
